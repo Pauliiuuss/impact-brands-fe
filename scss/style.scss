@@ -26,13 +26,77 @@ body {
   }
 }
 
+//NAV
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  //NAV MOBILE
+  &__mobile {
+    height: 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__burger {
+      position: absolute;
+      left: 16px;
+      z-index: 100;
+      cursor: pointer;
+    }
+
+    &__logo {
+      margin: auto;
+      font-size: 19px;
+      font-weight: 700;
+    }
+  }
+
+  //NAV DESKTOP
+  &__desktop {
+    position: relative;
+    display: none;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 920px;
+    width: 100%;
+
+    &__items {
+      position: absolute;
+      left: 38px;
+      display: flex;
+      gap: 24px;
+      font-weight: 600;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        color: $default-black;
+
+        &:hover {
+          color: $default-red;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+
+    &__logo {
+      margin: auto;
+      font-size: 19px;
+      font-weight: 700;
+    }
+  }
+}
+
 //HERO
 .hero {
   height: 660px;
   display: flex;
   background-image: $hero-bg-image;
   background-size: cover;
-  background-position: center;
+  background-position: top;
   align-items: center;
   flex-direction: column;
   justify-content: end;
@@ -40,7 +104,7 @@ body {
   position: relative;
   z-index: 1;
 
-  .hero__title {
+  &__title {
     font-weight: 800;
     font-size: 48px;
     text-align: center;
@@ -49,7 +113,7 @@ body {
     padding-bottom: 150px;
   }
 
-  .hero__button {
+  &__button {
     background-color: $default-red;
     max-width: 360px;
     width: 100%;
@@ -61,10 +125,12 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 3;
+    cursor: pointer;
   }
 
-  .hero__button:hover {
+  &__button:hover {
     background-color: $hover-red;
+    transition: all 0.3s ease-in-out;
   }
 }
 
@@ -87,7 +153,7 @@ body {
   gap: 20px;
   justify-content: center;
 
-  .benefits__card {
+  &__card {
     background-color: $secondary-background;
     max-width: 170px;
     width: 100%;
@@ -98,21 +164,13 @@ body {
     align-items: center;
     border-radius: 16px;
 
-    .benefits__card__title {
+    &__title {
       font-size: 14px;
       color: $default-black;
       padding: 0px 27.5px;
       margin: 6px 0px 0px 0px;
       text-align: center;
     }
-  }
-}
-
-//DESKTOPAS BUS TIK CIA ---------------------
-.card:hover {
-  img {
-    filter: invert(16%) sepia(44%) saturate(6964%) hue-rotate(352deg)
-      brightness(87%) contrast(104%);
   }
 }
 
@@ -124,7 +182,7 @@ body {
   align-items: center;
   position: relative;
 
-  .subscribe__title {
+  &__title {
     transform: rotate(-90deg);
     font-size: 22px;
     font-weight: 600;
@@ -134,18 +192,18 @@ body {
     right: -65px;
   }
 
-  .subscribe__content {
+  &__content {
     display: flex;
     flex-direction: column;
     gap: 30px;
 
-    .subscribe__content__row {
+    &__row {
       display: flex;
       gap: 24px;
       align-items: center;
     }
 
-    .subscribe__content__text {
+    &__text {
       color: $default-white;
       font-size: 14px;
     }
@@ -159,25 +217,29 @@ body {
   flex-direction: column;
   gap: 40px;
 
-  .advantages__title {
+  &__title {
     font-size: 22px;
     font-weight: 600;
     color: $default-black;
     text-align: center;
   }
 
-  .advantages__content {
+  &__content {
     display: flex;
     flex-direction: column;
     gap: 30px;
 
-    .advantages__content__row {
+    &__row {
       display: flex;
       gap: 20px;
     }
-    .advantages__content__text {
+    &__text {
       font-size: 14px;
       color: $default-black;
+    }
+    &__img {
+      width: 20px;
+      height: 20px;
     }
   }
 }
@@ -191,6 +253,11 @@ body {
   align-items: center;
   text-align: center;
   background-color: $neutral-background;
+
+  &__img {
+    width: 133px;
+    height: 133px;
+  }
 }
 
 //PRODUCT
@@ -201,48 +268,56 @@ body {
   padding: 40px 0px;
   background-color: $secondary-background;
 
-  .product__name {
-    color: $default-red;
-    font-size: 50px;
-    font-weight: 800;
-    text-align: center;
-  }
-  .product__title {
-    color: $default-black;
+  &__name {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     font-size: 50px;
     font-weight: 800;
     text-align: center;
     padding-bottom: 40px;
+
+    &__space {
+      display: none;
+    }
   }
-  .product__slideshow {
+
+  &__slideshow {
     position: relative;
     margin: auto;
 
-    .product__slideshow__slide {
+    &__slide {
+      flex-direction: column;
       text-align: center;
       padding: 0px 16px;
     }
 
-    .product__slideshow__title {
+    &__text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__title {
       font-weight: 600;
       font-size: 22px;
       color: $default-black;
     }
 
-    .product__slideshow__subtitle {
+    &__subtitle {
       font-size: 14px;
       color: $default-black;
       padding-bottom: 30px;
     }
 
-    .product__slideshow__content {
+    &__content {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
       padding: 0px 50px 48px 50px;
     }
 
-    .product__slideshow__row {
+    &__row {
       display: flex;
       flex-direction: column;
       gap: 3px;
@@ -252,7 +327,7 @@ body {
       }
     }
 
-    .product__slideshow__navigation {
+    &__navigation {
       display: flex;
       gap: 40px;
       justify-content: center;
@@ -285,7 +360,8 @@ body {
       background-color: $default-black;
     }
   }
-  .product__button {
+
+  &__button {
     display: flex;
     max-width: 360px;
     width: 100%;
@@ -297,6 +373,7 @@ body {
     align-self: center;
     margin-top: 30px;
     border-radius: 16px;
+    cursor: pointer;
   }
 }
 
@@ -304,24 +381,53 @@ body {
 .process {
   display: flex;
   flex-direction: column;
-  gap: 50px;
   padding: 30px 0px 42px 0px;
 
-  .process__title {
-    font-size: 3rem;
-    font-weight: 800;
-    text-align: center;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 879px;
+    align-items: center;
   }
 
-  .process__card {
+  &__title {
+    font-size: 48px;
+    font-weight: 800;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__divider {
+      display: none;
+    }
+  }
+
+  &__card {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 80%;
     padding: 0px 16px;
+
+    &__img {
+      position: static;
+    }
+
+    &__arrow {
+      display: block;
+    }
+
+    &__underline {
+      display: none;
+    }
   }
 
-  .process__card--right {
+  &__card--right {
     margin-left: auto;
     align-items: self-end;
     text-align: end;
@@ -331,6 +437,7 @@ body {
 //FAQS
 
 .faq {
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 38px;
@@ -338,20 +445,26 @@ body {
   background-color: $neutral-background;
   padding: 18px 16px;
 
-  .faq__title {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  &__title {
     font-weight: 800;
     font-size: 20px;
     color: $default-black;
   }
 
-  .faq__question {
+  &__question {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: $neutral-background;
     color: $default-black;
     cursor: pointer;
-    padding: 18px;
     width: 100%;
     text-align: left;
     border: none;
@@ -366,10 +479,11 @@ body {
   .active {
     .faq__chevron {
       transform: rotate(180deg);
+      transition: all 0.3s ease-in-out;
     }
   }
 
-  .faq__answer {
+  &__answer {
     padding: 0px 18px 40px 18px;
     background-color: $neutral-background;
     display: none;
@@ -378,5 +492,241 @@ body {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     text-align: left;
+  }
+}
+
+//PAD STYLES
+@media only screen and (min-width: 768px) {
+  .nav__mobile {
+    display: none;
+  }
+
+  .nav__desktop {
+    display: flex;
+  }
+
+  .benefits__card {
+    max-width: 150px;
+  }
+
+  .subscribe {
+    flex-direction: column;
+    gap: 35px;
+    padding: 40px 0px;
+
+    &__title {
+      transform: rotate(0deg);
+      position: static;
+    }
+
+    &__content {
+      flex-direction: row;
+      gap: 92px;
+      text-align: center;
+      justify-content: center;
+
+      &__row {
+        gap: 16px;
+        max-width: 110px;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  .advantages {
+    padding: 40px 120px 40px 120px;
+    align-items: center;
+
+    &__title {
+      width: 80%;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+      max-width: 1000px;
+
+      &__row {
+        max-width: 241px;
+        align-items: center;
+        justify-content: center;
+      }
+      &__text {
+        font-size: 16px;
+      }
+      &__img {
+        width: 40px;
+        height: 45px;
+      }
+    }
+  }
+
+  .disclaimer {
+    flex-direction: row;
+    gap: 45px;
+    justify-content: center;
+    padding: 25px 0px;
+
+    &__img {
+      width: 108px;
+      height: 100px;
+    }
+
+    p {
+      max-width: 351px;
+    }
+  }
+
+  .product {
+    padding: 40px 129px;
+
+    &__name {
+      flex-direction: row;
+
+      &__space {
+        display: block;
+      }
+    }
+
+    &__slideshow__slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__slideshow__content {
+      max-width: 330px;
+    }
+    &__slideshow__subtitle {
+      padding-bottom: 54px;
+    }
+  }
+
+  .process {
+    align-items: center;
+
+    &__title {
+      width: 65%;
+    }
+
+    &__content {
+      position: relative;
+      gap: 0px;
+
+      &__divider {
+        display: block;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        text-align: center;
+      }
+    }
+
+    &__card {
+      width: 40%;
+      gap: 0px;
+      align-items: self-end;
+      text-align: end;
+      position: relative;
+
+      &__img {
+        display: none;
+      }
+
+      &__arrow {
+        display: none;
+      }
+
+      &__underline {
+        display: block;
+      }
+    }
+
+    &__card--right {
+      align-items: self-start;
+      text-align: start;
+    }
+  }
+
+  .faq {
+    gap: 16px;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  .process__content__divider {
+    height: 550px;
+  }
+}
+
+//DESKTOP STYLES
+@media only screen and (min-width: 1000px) {
+  .hero__title {
+    max-width: 600px;
+  }
+
+  .benefits__card {
+    max-width: 213px;
+    flex-direction: row;
+    gap: 15px;
+
+    &__title {
+      padding: 0px;
+      margin: 0px;
+      text-align: start;
+    }
+
+    &:hover {
+      img {
+        filter: invert(16%) sepia(44%) saturate(6964%) hue-rotate(352deg)
+          brightness(87%) contrast(104%);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .product {
+    padding: 40px 0px;
+
+    &__slideshow__slide {
+      flex-direction: row;
+    }
+
+    &__slideshow__text {
+      text-align: start;
+      max-width: 347px;
+    }
+
+    &__slideshow__subtitle {
+      padding-bottom: 0px;
+    }
+  }
+
+  .subscribe__content__row:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .advantages__content__row:hover {
+    img {
+      filter: invert(16%) sepia(44%) saturate(6964%) hue-rotate(352deg)
+        brightness(87%) contrast(104%);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .faq {
+    gap: 20px;
+    &__content {
+      max-width: 800px;
+      width: 100%;
+    }
   }
 }
