@@ -1,0 +1,322 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+}
+body p,
+body h1,
+body h2,
+body h3 {
+  margin: 0px;
+}
+
+.hero {
+  height: 660px;
+  display: flex;
+  background-image: url("../images/bg.webp");
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: end;
+  padding: 0px 30px 40px 30px;
+  position: relative;
+  z-index: 1;
+}
+.hero .hero__title {
+  font-weight: 800;
+  font-size: 48px;
+  text-align: center;
+  color: #ffffff;
+  z-index: 3;
+  padding-bottom: 150px;
+}
+.hero .hero__button {
+  background-color: #c2110e;
+  max-width: 360px;
+  width: 100%;
+  border-radius: 16px;
+  height: 54px;
+  color: #ffffff;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+.hero .hero__button:hover {
+  background-color: #ac0f0c;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.benefits {
+  display: flex;
+  padding: 30px 16px;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.benefits .benefits__card {
+  background-color: #f9e8e7;
+  max-width: 170px;
+  width: 100%;
+  height: 118px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+}
+.benefits .benefits__card .benefits__card__title {
+  font-size: 14px;
+  color: #0b0a0c;
+  padding: 0px 27.5px;
+  margin: 6px 0px 0px 0px;
+  text-align: center;
+}
+
+.card:hover img {
+  filter: invert(16%) sepia(44%) saturate(6964%) hue-rotate(352deg) brightness(87%) contrast(104%);
+}
+
+.subscribe {
+  background-color: #0b0a0c;
+  padding: 62px 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.subscribe .subscribe__title {
+  transform: rotate(-90deg);
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  right: -65px;
+}
+.subscribe .subscribe__content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.subscribe .subscribe__content .subscribe__content__row {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.subscribe .subscribe__content .subscribe__content__text {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.advantages {
+  padding: 40px 26px 40px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.advantages .advantages__title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #0b0a0c;
+  text-align: center;
+}
+.advantages .advantages__content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.advantages .advantages__content .advantages__content__row {
+  display: flex;
+  gap: 20px;
+}
+.advantages .advantages__content .advantages__content__text {
+  font-size: 14px;
+  color: #0b0a0c;
+}
+
+.disclaimer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px;
+  align-items: center;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 0px;
+  background-color: #f9e8e7;
+}
+.product .product__name {
+  color: #c2110e;
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+}
+.product .product__title {
+  color: #0b0a0c;
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+  padding-bottom: 40px;
+}
+.product .product__slideshow {
+  position: relative;
+  margin: auto;
+}
+.product .product__slideshow .product__slideshow__slide {
+  text-align: center;
+  padding: 0px 16px;
+}
+.product .product__slideshow .product__slideshow__title {
+  font-weight: 600;
+  font-size: 22px;
+  color: #0b0a0c;
+}
+.product .product__slideshow .product__slideshow__subtitle {
+  font-size: 14px;
+  color: #0b0a0c;
+  padding-bottom: 30px;
+}
+.product .product__slideshow .product__slideshow__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0px 50px 48px 50px;
+}
+.product .product__slideshow .product__slideshow__row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.product .product__slideshow .product__slideshow__row img {
+  mix-blend-mode: multiply;
+}
+.product .product__slideshow .product__slideshow__navigation {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.product .product__slideshow .prev,
+.product .product__slideshow .next {
+  cursor: pointer;
+  color: #0b0a0c;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.product .product__slideshow .dot {
+  cursor: pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  border: #0b0a0c 1px;
+  border-style: solid;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.product .product__slideshow .active {
+  background-color: #0b0a0c;
+}
+.product .product__button {
+  display: flex;
+  max-width: 360px;
+  width: 100%;
+  height: 54px;
+  color: #ffffff;
+  background-color: #0b0a0c;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin-top: 30px;
+  border-radius: 16px;
+}
+
+.process {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 30px 0px 42px 0px;
+}
+.process .process__title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+}
+.process .process__card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+  padding: 0px 16px;
+}
+.process .process__card--right {
+  margin-left: auto;
+  align-items: self-end;
+  text-align: end;
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 18px 16px;
+}
+.faq .faq__title {
+  font-weight: 800;
+  font-size: 20px;
+  color: #0b0a0c;
+}
+.faq .faq__question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+  color: #0b0a0c;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+.faq .faq__question p {
+  width: 80%;
+}
+.faq .active .faq__chevron {
+  transform: rotate(180deg);
+}
+.faq .faq__answer {
+  padding: 0px 18px 40px 18px;
+  background-color: #f5f5f5;
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  text-align: left;
+}
+
+/*# sourceMappingURL=style.css.map */

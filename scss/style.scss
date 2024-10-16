@@ -1,0 +1,382 @@
+// Screen breakpoints
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1200px;
+
+//Colors
+$default-white: #ffffff;
+$secondary-background: #f9e8e7;
+$neutral-background: #f5f5f5;
+$default-black: #0b0a0c;
+$default-red: #c2110e;
+$hover-red: #ac0f0c;
+
+//Image
+$hero-bg-image: url('../images/bg.webp');
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: $default-white;
+  margin: 0;
+
+  p,
+  h1,
+  h2,
+  h3 {
+    margin: 0px;
+  }
+}
+
+//HERO
+.hero {
+  height: 660px;
+  display: flex;
+  background-image: $hero-bg-image;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: end;
+  padding: 0px 30px 40px 30px;
+  position: relative;
+  z-index: 1;
+
+  .hero__title {
+    font-weight: 800;
+    font-size: 48px;
+    text-align: center;
+    color: $default-white;
+    z-index: 3;
+    padding-bottom: 150px;
+  }
+
+  .hero__button {
+    background-color: $default-red;
+    max-width: 360px;
+    width: 100%;
+    border-radius: 16px;
+    height: 54px;
+    color: $default-white;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+  }
+
+  .hero__button:hover {
+    background-color: $hover-red;
+  }
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+//BENEFITS
+.benefits {
+  display: flex;
+  padding: 30px 16px;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+
+  .benefits__card {
+    background-color: $secondary-background;
+    max-width: 170px;
+    width: 100%;
+    height: 118px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+
+    .benefits__card__title {
+      font-size: 14px;
+      color: $default-black;
+      padding: 0px 27.5px;
+      margin: 6px 0px 0px 0px;
+      text-align: center;
+    }
+  }
+}
+
+//DESKTOPAS BUS TIK CIA ---------------------
+.card:hover {
+  img {
+    filter: invert(16%) sepia(44%) saturate(6964%) hue-rotate(352deg)
+      brightness(87%) contrast(104%);
+  }
+}
+
+//SUBSCRIBE
+.subscribe {
+  background-color: $default-black;
+  padding: 62px 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .subscribe__title {
+    transform: rotate(-90deg);
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    color: $default-white;
+    position: absolute;
+    right: -65px;
+  }
+
+  .subscribe__content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .subscribe__content__row {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .subscribe__content__text {
+      color: $default-white;
+      font-size: 14px;
+    }
+  }
+}
+
+//ADVANTAGES
+.advantages {
+  padding: 40px 26px 40px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  .advantages__title {
+    font-size: 22px;
+    font-weight: 600;
+    color: $default-black;
+    text-align: center;
+  }
+
+  .advantages__content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .advantages__content__row {
+      display: flex;
+      gap: 20px;
+    }
+    .advantages__content__text {
+      font-size: 14px;
+      color: $default-black;
+    }
+  }
+}
+
+//DISCLAIMER
+.disclaimer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px;
+  align-items: center;
+  text-align: center;
+  background-color: $neutral-background;
+}
+
+//PRODUCT
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 0px;
+  background-color: $secondary-background;
+
+  .product__name {
+    color: $default-red;
+    font-size: 50px;
+    font-weight: 800;
+    text-align: center;
+  }
+  .product__title {
+    color: $default-black;
+    font-size: 50px;
+    font-weight: 800;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+  .product__slideshow {
+    position: relative;
+    margin: auto;
+
+    .product__slideshow__slide {
+      text-align: center;
+      padding: 0px 16px;
+    }
+
+    .product__slideshow__title {
+      font-weight: 600;
+      font-size: 22px;
+      color: $default-black;
+    }
+
+    .product__slideshow__subtitle {
+      font-size: 14px;
+      color: $default-black;
+      padding-bottom: 30px;
+    }
+
+    .product__slideshow__content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding: 0px 50px 48px 50px;
+    }
+
+    .product__slideshow__row {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+
+      img {
+        mix-blend-mode: multiply;
+      }
+    }
+
+    .product__slideshow__navigation {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .prev,
+    .next {
+      cursor: pointer;
+      color: $default-black;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 13px;
+      width: 13px;
+      margin: 0 2px;
+      border: $default-black 1px;
+      border-style: solid;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active {
+      background-color: $default-black;
+    }
+  }
+  .product__button {
+    display: flex;
+    max-width: 360px;
+    width: 100%;
+    height: 54px;
+    color: $default-white;
+    background-color: $default-black;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    margin-top: 30px;
+    border-radius: 16px;
+  }
+}
+
+//PROCESS
+.process {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 30px 0px 42px 0px;
+
+  .process__title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .process__card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    padding: 0px 16px;
+  }
+
+  .process__card--right {
+    margin-left: auto;
+    align-items: self-end;
+    text-align: end;
+  }
+}
+
+//FAQS
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  text-align: center;
+  background-color: $neutral-background;
+  padding: 18px 16px;
+
+  .faq__title {
+    font-weight: 800;
+    font-size: 20px;
+    color: $default-black;
+  }
+
+  .faq__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $neutral-background;
+    color: $default-black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+
+    p {
+      width: 80%;
+    }
+  }
+
+  .active {
+    .faq__chevron {
+      transform: rotate(180deg);
+    }
+  }
+
+  .faq__answer {
+    padding: 0px 18px 40px 18px;
+    background-color: $neutral-background;
+    display: none;
+    overflow: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    text-align: left;
+  }
+}
